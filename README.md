@@ -8,7 +8,7 @@ AWS Workshop Studio provides a temporary or *sandbox* AWS account for the durati
 
 ## Project Overview
 
-This project includes a Python script that retrieves and displays information about your AWS account. 
+This project includes an *app* branch that contains a Python script that retrieves and displays information about your AWS account. 
 This script is used as a base for various Git and development workflow exercises.
 
 ## Security
