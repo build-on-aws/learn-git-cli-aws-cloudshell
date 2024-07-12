@@ -17,9 +17,8 @@ try:
     print(f"AWS Account ID: {account_id}")
     print(f"User ID: {user_info['UserId']}")
     print(f"Arn: {user_info['Arn']}")
-    # Does not print region, just Region: region
-    # Fixing region argument to print
-    print(f"Region: {region}")
+    # Change to current region    
+    print(f"Current Region: {region}")
 
 # in case of an error:
 except ClientError as e:
