@@ -10,6 +10,9 @@ try:
     # Get User Information
     user_info = session.client('sts').get_caller_identity()
     
+    # Get current region
+    current_region = session.region_name
+    
     # Print out all the info    
     print(f"AWS Account ID: {account_id}")
     print(f"User ID: {user_info['UserId']}")
