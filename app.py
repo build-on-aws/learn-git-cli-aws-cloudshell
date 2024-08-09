@@ -14,18 +14,19 @@ try:
     print(f"AWS Account ID: {account_id}")
     print(f"User ID: {user_info['UserId']}")
     print(f"Arn: {user_info['Arn']}")
+    print(f"AWS Region: {session.region_name}")
 
 # in case of an error:
 except ClientError as e:
     error_code = e.response['Error']['Code']
     if error_code == 'InvalidClientTokenId':
-        print("An error occurred: The security token included in the request is invalid. You should probably check the AWS access key and secret environment variables.")
+        print("Error: Invalid security token. Check your AWS credentials.")
     elif error_code == 'ExpiredToken':
-        print("An error occurred: The security token included in the request has expired. You should refresh your credentials.")
+        print("Error: Expired security token. Please refresh your credentials.")
     else:
-        print(f"An error occurred: {e}")
+        print(f"ClientError: {e}")
     sys.exit(1)
 
 except Exception as e:
-    print(f"An unexpected error occurred: {e}")
+    print(f"Unexpected error: {e}")
     sys.exit(1)
